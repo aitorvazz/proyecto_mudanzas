@@ -356,7 +356,13 @@ export default function HomePage() {
             </p>
           </div>
 
-
+          <div className="mb-12 text-center">
+            <img
+              src="/moving-consultation.jpg"
+              alt="Consulta personalizada de mudanzas"
+              className="mx-auto rounded-lg shadow-lg w-full max-w-3xl h-64 object-cover"
+            />
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer" onClick={handleContactClick}>
