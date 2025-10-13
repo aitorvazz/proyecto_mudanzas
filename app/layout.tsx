@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import Script from "next/script"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -43,6 +44,12 @@ export const metadata: Metadata = {
     canonical: "https://mudanzasbilbao.com",
   },
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/favicon_improved.ico", type: "image/x-icon", sizes: "any" },
+    ],
+    shortcut: [{ url: "/favicon_improved.ico" }],
+  },
 }
 
 export default function RootLayout({
@@ -53,6 +60,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="icon" href="/favicon_improved.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon_improved.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,6 +109,18 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EV925WFBMQ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EV925WFBMQ');
+          `}
+        </Script>
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
