@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mudanzasbilbo.com/sitemap.xml
+Sitemap: https://mudanzasbilbo.com/sitemap.xml
